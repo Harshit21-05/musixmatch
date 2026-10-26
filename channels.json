@@ -1,0 +1,42 @@
+{
+  "T-Series": {
+    "handle": "tseries",
+    "channel_id": "UChz5aEi3dfrDVC8-YJsMUDA",
+    "url": "https://www.youtube.com/@tseries"
+  },
+  "Zee Music Company": {
+    "handle": "zeemusiccompany",
+    "channel_id": "NOT_FOUND",
+    "url": "https://www.youtube.com/@zeemusiccompany"
+  },
+  "Sony Music India": {
+    "handle": "sonymusicindia",
+    "channel_id": "UCZjUXkKr9GiSV43YSaZVO7Q",
+    "url": "https://www.youtube.com/@sonymusicindia"
+  },
+  "Saregama Music": {
+    "handle": "saregamamusic",
+    "channel_id": "UCGzzga499Hr2AB1btQ3XtoQ",
+    "url": "https://www.youtube.com/@saregamamusic"
+  },
+  "Tips Official": {
+    "handle": "tipsofficial",
+    "channel_id": "UCJrDMFOdv1I2k8n9oK_V21w",
+    "url": "https://www.youtube.com/@tipsofficial"
+  },
+  "Aditya Music": {
+    "handle": "adityamusic",
+    "channel_id": "UCX_uPA_dGf7wXjuMEaSKLJA",
+    "url": "https://www.youtube.com/@adityamusic"
+  },
+  "Speed Records": {
+    "handle": "speedrecords",
+    "channel_id": "NOT_FOUND",
+    "url": "https://www.youtube.com/@speedrecords"
+  },
+  "Times Music": {
+    "handle": "TimesMusicIndia",
+    "channel_id": "NOT_FOUND",
+    "url": "https://www.youtube.com/@TimesMusicIndia"
+  }
+}

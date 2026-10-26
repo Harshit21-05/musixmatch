@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design System Tokens: Dark Mode Default */
+  --background: #090a0f;
+  --foreground: #f3f4f6;
+
+  --surface: #11131a;
+  --surface-elevated: #181b24;
+  --surface-subtle: #1f2330;
+  --surface-border: #282d3d;
+  --surface-border-subtle: #1c212e;
+
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Density Tokens: comfortable by default */
+  --space-unit: 1rem;
+  --table-row-py: 0.75rem;
+  --card-padding: 1.25rem;
+  --button-min-h: 44px; /* WCAG touch target */
+}
+
+.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+
+  --surface: #ffffff;
+  --surface-elevated: #f1f5f9;
+  --surface-subtle: #e2e8f0;
+  --surface-border: #cbd5e1;
+  --surface-border-subtle: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+}
+
+/* Density Compact: desktop default */
+.density-compact {
+  --space-unit: 0.75rem;
+  --table-row-py: 0.35rem;
+  --card-padding: 0.85rem;
+  --button-min-h: 32px;
+}
+
+/* Density Comfortable: mobile default */
+.density-comfortable {
+  --space-unit: 1rem;
+  --table-row-py: 0.75rem;
+  --card-padding: 1.25rem;
+  --button-min-h: 44px;
+}
+
+/* Typography Line Heights per Indic Script */
+.font-devanagari {
+  line-height: 1.65 !important;
+}
+.font-tamil {
+  line-height: 1.75 !important;
+}
+.font-telugu {
+  line-height: 1.75 !important;
+}
+.font-kannada {
+  line-height: 1.75 !important;
+}
+.font-malayalam {
+  line-height: 1.8 !important;
+}
+.font-bengali {
+  line-height: 1.65 !important;
+}
+.font-gurmukhi {
+  line-height: 1.65 !important;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Focus Ring for Keyboard Accessibility (Desktop & Tab) */
+*:focus-visible {
+  outline: 2px solid #f43f5e;
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Drop Highlight Flash */
+@keyframes dropHighlight {
+  0% {
+    background-color: rgba(244, 63, 94, 0.4);
+    box-shadow: 0 0 25px rgba(244, 63, 94, 0.7);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.animate-drop-flash {
+  animation: dropHighlight 2.5s ease-out;
+}
+
+/* Safe-area insets for mobile & Capacitor Android/iOS notch and navigation bars */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-left {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.safe-right {
+  padding-right: env(safe-area-inset-right, 0px);
+}

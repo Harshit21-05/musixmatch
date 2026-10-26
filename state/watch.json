@@ -1,0 +1,360 @@
+{
+  "last_updated": "2026-10-26T09:49:13+05:30",
+  "films": [
+    {
+      "title": "Ramayana: Part 1",
+      "language": "Hindi",
+      "production": "DNEG / Prime Focus / Namit Malhotra",
+      "youtube_channel": "https://www.youtube.com/@DNEG",
+      "source": "https://mapsofindia.com"
+    },
+    {
+      "title": "King",
+      "language": "Hindi",
+      "production": "Red Chillies Entertainment",
+      "youtube_channel": "https://www.youtube.com/@RedChilliesEntertainment",
+      "source": "https://mapsofindia.com"
+    },
+    {
+      "title": "Love & War",
+      "language": "Hindi",
+      "production": "Bhansali Productions",
+      "youtube_channel": "https://www.youtube.com/@BhansaliProductions",
+      "source": "https://mediamarvels.in"
+    },
+    {
+      "title": "Golmaal 5",
+      "language": "Hindi",
+      "production": "Rohit Shetty Picturez",
+      "youtube_channel": "https://www.youtube.com/@RohitShettyPicturez",
+      "source": "https://mediamarvels.in"
+    },
+    {
+      "title": "Spirit",
+      "language": "Telugu / Pan-India",
+      "production": "T-Series / Bhadrakali Pictures",
+      "youtube_channel": "https://www.youtube.com/@tseries",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Varanasi",
+      "language": "Telugu / Pan-India",
+      "production": "Sri Durga Arts / S.S. Rajamouli",
+      "youtube_channel": "https://www.youtube.com/@ssrajamouli",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Dragon",
+      "language": "Telugu / Pan-India",
+      "production": "Hombale Films / NTR Arts",
+      "youtube_channel": "https://www.youtube.com/@HombaleFilms",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Raaka",
+      "language": "Telugu / Tamil",
+      "production": "Sun Pictures / Atlee",
+      "youtube_channel": "https://www.youtube.com/@sunpictures",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Cult",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "Killer",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "Itllu Arjuna",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "Bhogi",
+      "language": "Telugu",
+      "production": "Sharwanand / Anupama Parameswaran",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://gadgets360.com"
+    },
+    {
+      "title": "ENE Repeat",
+      "language": "Telugu",
+      "production": "Tharun Bhascker",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://gadgets360.com"
+    },
+    {
+      "title": "Aakasamlo Oka Tara",
+      "language": "Telugu",
+      "production": "Geetha Arts",
+      "youtube_channel": "https://www.youtube.com/@GeethaArts",
+      "source": "https://gadgets360.com"
+    },
+    {
+      "title": "Alias Rukmini",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "Legacy",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "King 100",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "Rowdy Janardhana",
+      "language": "Telugu",
+      "production": "Tollywood Production",
+      "youtube_channel": "https://www.youtube.com/@adityamusic",
+      "source": "https://boxofficeandhra.com"
+    },
+    {
+      "title": "Jailer 2",
+      "language": "Tamil",
+      "production": "Sun Pictures",
+      "youtube_channel": "https://www.youtube.com/@sunpictures",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Love Insurance Kompany",
+      "language": "Tamil",
+      "production": "Seven Screen Studio / Rowdy Pictures",
+      "youtube_channel": "https://www.youtube.com/@SonyMusicSouthVEVO",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Jana Nayagan",
+      "language": "Tamil",
+      "production": "Sun Pictures",
+      "youtube_channel": "https://www.youtube.com/@sunpictures",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Karuppu",
+      "language": "Tamil",
+      "production": "Kollywood Production",
+      "youtube_channel": "https://www.youtube.com/@thinkmusicofficial",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Toxic: A Fairy Tale for Grown-ups",
+      "language": "Kannada",
+      "production": "KVN Productions",
+      "youtube_channel": "https://www.youtube.com/@KVNProductions",
+      "source": "https://bookmyshow.com"
+    },
+    {
+      "title": "KD: The Devil",
+      "language": "Kannada",
+      "production": "KVN Productions",
+      "youtube_channel": "https://www.youtube.com/@KVNProductions",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Richard Anthony",
+      "language": "Kannada",
+      "production": "Hombale Films",
+      "youtube_channel": "https://www.youtube.com/@HombaleFilms",
+      "source": "https://facebook.com"
+    },
+    {
+      "title": "Billa Ranga Baashaa",
+      "language": "Kannada",
+      "production": "Kichcha Sudeepa",
+      "youtube_channel": "https://www.youtube.com/@LahariMusicIndia",
+      "source": "https://facebook.com"
+    },
+    {
+      "title": "Drishyam 3",
+      "language": "Malayalam / Hindi",
+      "production": "Aashirvad Cinemas / Panorama Studios",
+      "youtube_channel": "https://www.youtube.com/@panorama_studios",
+      "source": "https://cubesentertainments.com"
+    },
+    {
+      "title": "Empuraan (Lucifer 2)",
+      "language": "Malayalam",
+      "production": "Aashirvad Cinemas / Lyca Productions",
+      "youtube_channel": "https://www.youtube.com/@aashirvadcinemas",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Aadu 3",
+      "language": "Malayalam",
+      "production": "Friday Film House",
+      "youtube_channel": "https://www.youtube.com/@fridayfilmhouse",
+      "source": "https://wikipedia.org"
+    },
+    {
+      "title": "Naagzilla",
+      "language": "Hindi",
+      "production": "Balaji Motion Pictures",
+      "youtube_channel": "https://www.youtube.com/@BalajiMotionPictures",
+      "source": "https://mediamarvels.in"
+    },
+    {
+      "title": "SVC 63",
+      "language": "Telugu / Hindi",
+      "production": "Sri Venkateswara Creations",
+      "youtube_channel": "https://www.youtube.com/@srivenkateswaracreations",
+      "source": "https://mediamarvels.in"
+    },
+    {
+      "title": "Force 3",
+      "language": "Hindi",
+      "production": "JA Entertainment",
+      "youtube_channel": "https://www.youtube.com/@tseries",
+      "source": "https://mediamarvels.in"
+    }
+  ],
+  "artists_and_composers": [
+    {
+      "name": "A. R. Rahman",
+      "role": "Music Director / Composer",
+      "youtube_channel": "https://www.youtube.com/@arrahman",
+      "handle": "@arrahman"
+    },
+    {
+      "name": "Anirudh Ravichander",
+      "role": "Music Director / Composer",
+      "youtube_channel": "https://www.youtube.com/@anirudhofficial",
+      "handle": "@anirudhofficial"
+    },
+    {
+      "name": "Pritam",
+      "role": "Music Director / Composer",
+      "youtube_channel": "https://www.youtube.com/@pritam",
+      "handle": "@pritam"
+    },
+    {
+      "name": "Devi Sri Prasad (DSP)",
+      "role": "Music Director / Composer",
+      "youtube_channel": "https://www.youtube.com/@ThisIsDSP",
+      "handle": "@ThisIsDSP"
+    },
+    {
+      "name": "Thaman S",
+      "role": "Music Director / Composer",
+      "youtube_channel": "https://www.youtube.com/@MusicThaman",
+      "handle": "@MusicThaman"
+    },
+    {
+      "name": "Arijit Singh",
+      "role": "Singer",
+      "youtube_channel": "https://www.youtube.com/@ArijitSingh",
+      "handle": "@ArijitSingh"
+    },
+    {
+      "name": "Shreya Ghoshal",
+      "role": "Singer",
+      "youtube_channel": "https://www.youtube.com/@ShreyaGhoshalOfficial",
+      "handle": "@ShreyaGhoshalOfficial"
+    },
+    {
+      "name": "Diljit Dosanjh",
+      "role": "Singer / Artist",
+      "youtube_channel": "https://www.youtube.com/@diljitdosanjh",
+      "handle": "@diljitdosanjh"
+    },
+    {
+      "name": "Karan Aujla",
+      "role": "Singer / Rapper",
+      "youtube_channel": "https://www.youtube.com/@KaranAujlaOfficial",
+      "handle": "@KaranAujlaOfficial"
+    },
+    {
+      "name": "Sid Sriram",
+      "role": "Singer",
+      "youtube_channel": "https://www.youtube.com/@sidsrirammusic",
+      "handle": "@sidsrirammusic"
+    },
+    {
+      "name": "Armaan Malik",
+      "role": "Singer",
+      "youtube_channel": "https://www.youtube.com/@ArmaanMalikOfficial",
+      "handle": "@ArmaanMalikOfficial"
+    },
+    {
+      "name": "Badshah",
+      "role": "Rapper / Artist",
+      "youtube_channel": "https://www.youtube.com/@badshah",
+      "handle": "@badshah"
+    }
+  ],
+  "labels": [
+    {
+      "name": "T-Series",
+      "handle": "@tseries",
+      "youtube_channel": "https://www.youtube.com/@tseries"
+    },
+    {
+      "name": "Zee Music Company",
+      "handle": "@zeemusiccompany",
+      "youtube_channel": "https://www.youtube.com/@zeemusiccompany"
+    },
+    {
+      "name": "Sony Music India",
+      "handle": "@sonymusicindia",
+      "youtube_channel": "https://www.youtube.com/@sonymusicindia"
+    },
+    {
+      "name": "Saregama Music",
+      "handle": "@saregamamusic",
+      "youtube_channel": "https://www.youtube.com/@saregamamusic"
+    },
+    {
+      "name": "Tips Official",
+      "handle": "@tipsofficial",
+      "youtube_channel": "https://www.youtube.com/@tipsofficial"
+    },
+    {
+      "name": "Aditya Music",
+      "handle": "@adityamusic",
+      "youtube_channel": "https://www.youtube.com/@adityamusic"
+    },
+    {
+      "name": "Lahari Music",
+      "handle": "@LahariMusicIndia",
+      "youtube_channel": "https://www.youtube.com/@LahariMusicIndia"
+    },
+    {
+      "name": "Think Music",
+      "handle": "@thinkmusicofficial",
+      "youtube_channel": "https://www.youtube.com/@thinkmusicofficial"
+    },
+    {
+      "name": "Mango Music",
+      "handle": "@mangomusic",
+      "youtube_channel": "https://www.youtube.com/@mangomusic"
+    },
+    {
+      "name": "Speed Records",
+      "handle": "@speedrecords",
+      "youtube_channel": "https://www.youtube.com/@speedrecords"
+    },
+    {
+      "name": "Times Music",
+      "handle": "@timesmusicindia",
+      "youtube_channel": "https://www.youtube.com/@timesmusicindia"
+    }
+  ]
+}

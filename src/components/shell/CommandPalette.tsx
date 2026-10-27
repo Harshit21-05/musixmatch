@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, Film, Music, User, Radio, Calendar, CheckSquare, Activity, Settings, ArrowRight, X } from 'lucide-react';
 import { useData } from '@/context/DataContext';
+import { isSimulationEnabled } from '@/lib/config';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -83,17 +84,20 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       category: 'Watchlist',
     }));
 
-  const quickActions = [
-    {
-      label: '⚡ Simulate Live Drop Alert (Chime & Banner)',
-      action: () => {
-        triggerSimulatedDrop();
-        onClose();
-      },
-      icon: Radio,
-      category: 'Quick Actions',
-    },
-  ];
+  const simulationEnabled = isSimulationEnabled();
+  const quickActions = simulationEnabled
+    ? [
+        {
+          label: '⚡ Simulate Live Drop Alert (Chime & Banner)',
+          action: () => {
+            triggerSimulatedDrop();
+            onClose();
+          },
+          icon: Radio,
+          category: 'Quick Actions',
+        },
+      ]
+    : [];
 
   const filteredNav = query
     ? staticNavigation.filter(n => n.label.toLowerCase().includes(query.toLowerCase()))

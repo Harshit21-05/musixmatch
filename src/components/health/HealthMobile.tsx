@@ -109,7 +109,14 @@ export function HealthMobile() {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="text-sm font-bold text-foreground">{col.name}</h3>
+                    <h3 className="text-sm font-bold text-foreground flex items-center gap-1.5">
+                      <span>{col.name}</span>
+                      {col.is_demo && (
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                          DEMO
+                        </span>
+                      )}
+                    </h3>
                     <p className="text-xs text-text-muted mt-0.5">{col.source}</p>
                   </div>
 

@@ -26,6 +26,7 @@ import { ContextMenu } from '@/components/atomic/ContextMenu';
 import { Button } from '@/components/atomic/Button';
 import { MusicEvent, Language, EventState, ConfidenceLevel } from '@/types';
 import { formatRelativeIST, formatIST } from '@/utils/date';
+import { isSimulationEnabled } from '@/lib/config';
 
 export function LiveFeedDesktop() {
   const router = useRouter();
@@ -175,20 +176,22 @@ export function LiveFeedDesktop() {
             Live Ingestion Radar
           </span>
           <div className="truncate text-text-secondary">
-            ⚡ Real-time Indian music drops • Instant audio fingerprinting • Active coverage: Hindi, Tamil, Telugu, Punjabi
+            ⚡ Real-time Indian music drops • Active coverage: Hindi, Tamil, Telugu, Punjabi
           </div>
         </div>
 
         <div className="flex items-center gap-2 shrink-0 ml-4">
-          <Button
-            size="sm"
-            variant="ghost"
-            onClick={triggerSimulatedDrop}
-            icon={Sparkles}
-            className="text-xs text-brand-400 hover:text-brand-300"
-          >
-            Simulate Drop
-          </Button>
+          {isSimulationEnabled() && (
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={triggerSimulatedDrop}
+              icon={Sparkles}
+              className="text-xs text-brand-400 hover:text-brand-300"
+            >
+              Simulate Drop
+            </Button>
+          )}
           <Button
             size="sm"
             variant="outline"
@@ -470,7 +473,14 @@ export function LiveFeedDesktop() {
               <div className="space-y-2">
                 {collectors.slice(0, 3).map(col => (
                   <div key={col.id} className="flex items-center justify-between text-xs">
-                    <span className="text-text-secondary truncate pr-2">{col.name}</span>
+                    <span className="text-text-secondary truncate pr-2 flex items-center gap-1.5">
+                      <span>{col.name}</span>
+                      {col.is_demo && (
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                          DEMO
+                        </span>
+                      )}
+                    </span>
                     <span className="flex items-center gap-1.5 shrink-0 text-[10px] text-emerald-400 font-mono">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       {col.latencyMs}ms

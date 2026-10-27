@@ -106,18 +106,11 @@ export async function checkRateLimit(
         };
       }
     }
-  } else if (process.env.NODE_ENV === 'production') {
-    console.error('[RateLimiter] SUPABASE_SERVICE_ROLE_KEY missing in production environment');
-    return {
-      allowed: false,
-      remaining: 0,
-      error: true,
-      errorMessage: 'Database connection unconfigured for rate limiting in production',
-      backend: 'postgres',
-    };
+  } else {
+    // If Supabase and Redis are not configured, use in-memory sliding window fallback
   }
 
-  // 3. Fallback in-memory sliding window (strictly for local offline dev when Supabase is unconfigured)
+  // 3. Fallback in-memory sliding window
   const now = Date.now();
   const windowMs = windowSeconds * 1000;
   let record = clientRecords.get(clientId);

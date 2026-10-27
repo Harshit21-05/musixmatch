@@ -18,6 +18,7 @@ import { useData } from '@/context/DataContext';
 import { useSettings } from '@/context/SettingsContext';
 import { StateBadge } from '@/components/atomic/Badge';
 import { LanguageChip } from '@/components/atomic/LanguageChip';
+import { isSimulationEnabled } from '@/lib/config';
 import { TierBadge } from '@/components/atomic/TierBadge';
 import { Button } from '@/components/atomic/Button';
 import { soundManager } from '@/utils/sound';
@@ -82,7 +83,7 @@ export default function WallModePage() {
           <div className="flex items-center gap-2.5">
             <div className="w-3.5 h-3.5 rounded-full bg-red-500 animate-ping" />
             <h1 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
-              mxm <span className="text-red-500 font-extrabold">WALL DASHBOARD</span>
+              Song Radar <span className="text-red-500 font-extrabold">WALL DASHBOARD</span>
             </h1>
           </div>
         </div>
@@ -104,16 +105,18 @@ export default function WallModePage() {
               Sound {soundEnabled ? 'ON' : 'OFF'}
             </Button>
 
-            <Button
-              size="sm"
-              variant="primary"
-              icon={Sparkles}
-              onClick={triggerSimulatedDrop}
-              className="text-xs font-bold"
-              title="Client-side memory simulation only. Never writes to database."
-            >
-              Simulate Drop (TEST)
-            </Button>
+            {isSimulationEnabled() && (
+              <Button
+                size="sm"
+                variant="primary"
+                icon={Sparkles}
+                onClick={triggerSimulatedDrop}
+                className="text-xs font-bold"
+                title="Client-side memory simulation only. Never writes to database."
+              >
+                Simulate Drop (TEST)
+              </Button>
+            )}
 
             <button
               type="button"

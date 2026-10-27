@@ -130,6 +130,7 @@ export interface CollectorSource {
   confidence: ConfidenceLevel | number;
   first_seen_at?: string;
   updated?: string;
+  is_demo?: boolean;
 }
 
 export interface EventHistoryItem {
@@ -243,6 +244,7 @@ export interface CollectorHealth {
   latencyMs: number;
   errorRate: number;
   schedule: string;
+  is_demo?: boolean;
 }
 
 export interface IngestLogItem {

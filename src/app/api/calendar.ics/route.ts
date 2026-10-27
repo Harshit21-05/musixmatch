@@ -6,8 +6,9 @@ import { MusicEvent } from '@/types';
 import { INITIAL_EVENTS } from '@/data/mock-data';
 
 function verifyCalendarToken(req: NextRequest): boolean {
-  const expectedPasscode = process.env.SONG_RADAR_PASSCODE || 'songradar2026';
-  const expectedIngest = process.env.INGEST_TOKEN || 'songradar-secret-ingest-token-2026';
+  const isProduction = process.env.NODE_ENV === 'production';
+  const expectedPasscode = process.env.SONG_RADAR_PASSCODE || (isProduction ? '' : 'songradar2026');
+  const expectedIngest = process.env.INGEST_TOKEN || (isProduction ? '' : 'songradar-secret-ingest-token-2026');
 
   // 1. Check query parameter: ?token=...
   const url = new URL(req.url);

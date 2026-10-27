@@ -26,6 +26,7 @@ import { useSettings } from '@/context/SettingsContext';
 import { useData } from '@/context/DataContext';
 import { CommandPalette } from '@/components/shell/CommandPalette';
 import { KeyboardShortcutsModal } from '@/components/modals/KeyboardShortcutsModal';
+import { isSimulationEnabled } from '@/lib/config';
 
 interface DesktopShellProps {
   children: React.ReactNode;
@@ -139,15 +140,12 @@ export function DesktopShell({ children }: DesktopShellProps) {
         {/* App Brand Header */}
         <div className="h-16 flex items-center justify-between px-4 border-b border-surface-border">
           <Link href="/" className="flex items-center gap-2.5 min-w-0 overflow-hidden">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-rose-400 flex items-center justify-center font-black text-white text-sm shrink-0 shadow-md shadow-brand-600/30">
-              M
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-rose-400 flex items-center justify-center font-black text-white text-xs shrink-0 shadow-md shadow-brand-600/30 tracking-tight">
+              SR
             </div>
             {!collapsed && (
               <div className="truncate">
-                <span className="font-extrabold text-base tracking-tight text-foreground">mxm</span>
-                <span className="ml-1 text-[10px] font-bold text-brand-500 uppercase tracking-widest bg-brand-500/10 px-1.5 py-0.5 rounded border border-brand-500/20">
-                  radar
-                </span>
+                <span className="font-extrabold text-base tracking-tight text-foreground">Song Radar</span>
               </div>
             )}
           </Link>
@@ -260,14 +258,16 @@ export function DesktopShell({ children }: DesktopShellProps) {
 
           {/* Quick Header Actions */}
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={triggerSimulatedDrop}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/30 hover:bg-brand-500/20 active:scale-95 transition-all"
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              Simulate Drop
-            </button>
+            {isSimulationEnabled() && (
+              <button
+                type="button"
+                onClick={triggerSimulatedDrop}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/30 hover:bg-brand-500/20 active:scale-95 transition-all"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                Simulate Drop
+              </button>
+            )}
 
             <Link
               href="/wall"

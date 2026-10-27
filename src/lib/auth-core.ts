@@ -5,13 +5,13 @@ export const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
 /**
  * Returns the secret key used strictly for signing and verifying session cookies.
- * In production, process.env.AUTH_SECRET is required.
+ * Falls back to SONG_RADAR_PASSCODE if AUTH_SECRET is not explicitly provided.
  */
 export function getAuthSecret(): string {
-  const secret = process.env.AUTH_SECRET;
+  const secret = process.env.AUTH_SECRET || process.env.SONG_RADAR_PASSCODE;
   if (!secret) {
     if (process.env.NODE_ENV === 'production') {
-      throw new Error('FATAL SECURITY ERROR: AUTH_SECRET environment variable is missing.');
+      throw new Error('FATAL SECURITY ERROR: AUTH_SECRET or SONG_RADAR_PASSCODE environment variable is missing.');
     }
     // Fallback for development/testing only
     return 'dev-song-radar-auth-secret-change-in-prod-2026';
@@ -100,12 +100,53 @@ export function verifySignedToken(
  */
 export function validatePasscode(input: string): boolean {
   const expected = process.env.SONG_RADAR_PASSCODE;
-  if (!expected) return false;
-  if (!input) return false;
+  if (!expected || !expected.trim()) return false;
+  if (!input || !input.trim()) return false;
 
-  const inputBuf = Buffer.from(input);
-  const expectedBuf = Buffer.from(expected);
+  const inputBuf = Buffer.from(input.trim());
+  const expectedBuf = Buffer.from(expected.trim());
 
   if (inputBuf.length !== expectedBuf.length) return false;
   return crypto.timingSafeEqual(inputBuf, expectedBuf);
+}
+
+export interface AuthGateStatus {
+  isProduction: boolean;
+  isPasscodeConfigured: boolean;
+  failClosed: boolean;
+  authenticated: boolean;
+  passcodeRequired: boolean;
+}
+
+/**
+ * Determines server authentication status for incoming requests.
+ * - If SONG_RADAR_PASSCODE is set: requires valid signed cookie token.
+ * - If SONG_RADAR_PASSCODE is missing in production: FAILS CLOSED (never opens, authenticated=false, failClosed=true).
+ * - If in development without passcode: authenticated=true.
+ */
+export function getAuthGateStatus(token?: string): AuthGateStatus {
+  const isProduction = process.env.NODE_ENV === 'production';
+  const passcode = process.env.SONG_RADAR_PASSCODE;
+  const isPasscodeConfigured = Boolean(passcode && passcode.trim().length > 0);
+
+  // If passcode env var is missing in production, fail closed, never open
+  const failClosed = isProduction && !isPasscodeConfigured;
+  const passcodeRequired = isPasscodeConfigured || failClosed;
+
+  let authenticated = false;
+  if (!passcodeRequired) {
+    authenticated = true;
+  } else if (failClosed) {
+    authenticated = false;
+  } else {
+    authenticated = verifySignedToken(token);
+  }
+
+  return {
+    isProduction,
+    isPasscodeConfigured,
+    failClosed,
+    authenticated,
+    passcodeRequired,
+  };
 }

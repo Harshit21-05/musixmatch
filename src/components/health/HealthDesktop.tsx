@@ -215,7 +215,14 @@ export function HealthDesktop() {
               return (
                 <div key={c.id} className="space-y-1">
                   <div className="flex justify-between text-xs">
-                    <span className="font-semibold text-foreground truncate max-w-xs">{c.name}</span>
+                    <span className="font-semibold text-foreground truncate max-w-xs flex items-center gap-1.5">
+                      <span>{c.name}</span>
+                      {c.is_demo && (
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                          DEMO
+                        </span>
+                      )}
+                    </span>
                     <span className="font-mono text-text-muted">{c.latencyMs} ms</span>
                   </div>
                   <div className="w-full h-2 bg-surface-subtle rounded-full overflow-hidden">

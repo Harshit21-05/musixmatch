@@ -1,10 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { AUTH_COOKIE_NAME, validatePasscode, createSignedToken } from '@/lib/auth';
+import { AUTH_COOKIE_NAME, validatePasscode, createSignedToken, getAuthGateStatus } from '@/lib/auth';
 import { checkRateLimit } from '@/lib/rate-limiter';
 import { getClientIp } from '@/lib/ip';
 
 export async function POST(req: NextRequest) {
   try {
+    const gateStatus = getAuthGateStatus();
+    if (gateStatus.failClosed) {
+      return NextResponse.json(
+        { error: 'Server configuration error: SONG_RADAR_PASSCODE is not set in production. Access is locked.' },
+        { status: 503, headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' } }
+      );
+    }
     const clientIp = getClientIp(req);
 
     // 1. Per-IP Rate Limiting: 5 attempts per minute per IP

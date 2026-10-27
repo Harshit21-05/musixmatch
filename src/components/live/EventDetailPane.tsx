@@ -154,18 +154,31 @@ export function EventDetailPane({
         {/* Release Time Banner in IST */}
         <div className="bg-surface rounded-xl p-3.5 border border-surface-border flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <Clock className="w-4 h-4 text-brand-400 shrink-0" />
+            <Clock className={`w-4 h-4 shrink-0 ${event.is_demo ? 'text-amber-400' : 'text-brand-400'}`} />
             <div>
-              <div className="text-xs font-bold text-foreground">
-                {formatIST(eventTime)}
+              <div className="text-xs font-bold text-foreground flex items-center gap-2">
+                <span>{formatIST(eventTime)}</span>
+                {event.is_demo && (
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                    DEMO
+                  </span>
+                )}
               </div>
               <div className="text-[11px] text-text-muted">
-                {formatRelativeIST(eventTime)}
+                {event.is_demo ? (
+                  <span className="text-amber-400/90 font-medium">DEMO TIMESTAMP • {formatRelativeIST(eventTime)}</span>
+                ) : (
+                  formatRelativeIST(eventTime)
+                )}
               </div>
             </div>
           </div>
-          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">
-            IST Synchronized
+          <span className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded border ${
+            event.is_demo
+              ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+              : 'bg-brand-500/10 text-brand-400 border-brand-500/20'
+          }`}>
+            {event.is_demo ? 'DEMO DATA' : 'IST Synchronized'}
           </span>
         </div>
 
@@ -215,22 +228,39 @@ export function EventDetailPane({
               Collector Sources & Ingest Times
             </h3>
             <div className="space-y-2">
-              {(event.sources || []).map((src, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center justify-between p-2 rounded-lg bg-surface-elevated border border-surface-border/60 text-xs"
-                >
-                  <div className="min-w-0 pr-2">
-                    <div className="font-semibold text-foreground truncate">{src.source || src.name}</div>
-                    <div className="text-[10px] text-text-muted">
-                      First seen: {src.first_seen_at ? formatIST(src.first_seen_at) : src.updated || 'Recent'}
+              {(event.sources || []).map((src, idx) => {
+                const isDemo = event.is_demo || src.is_demo;
+                return (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between p-2 rounded-lg bg-surface-elevated border border-surface-border/60 text-xs"
+                  >
+                    <div className="min-w-0 pr-2">
+                      <div className="font-semibold text-foreground truncate flex items-center gap-1.5">
+                        <span>{src.source || src.name}</span>
+                        {isDemo && (
+                          <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                            DEMO SOURCE
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-[10px] text-text-muted">
+                        First seen:{' '}
+                        {isDemo ? (
+                          <span className="text-amber-400 font-mono font-semibold">DEMO</span>
+                        ) : src.first_seen_at ? (
+                          formatIST(src.first_seen_at)
+                        ) : (
+                          src.updated || 'Recent'
+                        )}
+                      </div>
                     </div>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                      {typeof src.confidence === 'number' ? `${src.confidence}%` : src.confidence} Conf
+                    </span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                    {typeof src.confidence === 'number' ? `${src.confidence}%` : src.confidence} Conf
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -260,7 +290,15 @@ export function EventDetailPane({
                   </div>
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-xs font-semibold text-foreground">{node.label}</span>
-                    <span className="text-[10px] font-mono text-text-muted shrink-0">{node.time}</span>
+                    <span className="text-[10px] font-mono shrink-0">
+                      {event.is_demo ? (
+                        <span className="text-amber-400 font-bold px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
+                          DEMO
+                        </span>
+                      ) : (
+                        <span className="text-text-muted">{node.time}</span>
+                      )}
+                    </span>
                   </div>
                 </div>
               );
